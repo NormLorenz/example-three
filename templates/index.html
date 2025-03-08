@@ -16,6 +16,10 @@
     {% if image_url %}
         <h2>Generated Image:</h2>
         <img src="{{ image_url }}" height="512px" width="512px" alt="Generated Image">
+        <br>
+        <a href="{{ image_url }}" download="generated_image.png">
+            <button type="button">Download Image</button>
+        </a>
     {% endif %}
 </body>
 </html>
