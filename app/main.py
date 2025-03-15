@@ -1,14 +1,15 @@
 from flask import Flask, request, render_template
 import openai
-import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
+app.config.from_object('config.Config')
 
-# Set your OpenAI API key here
-openai.api_key = os.getenv('OPENAI_API_KEY')
+# Use square brackets to access the config value
+openai.api_key = app.config['OPENAI_API_KEY']
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -17,12 +18,12 @@ def index():
         response = openai.Image.create(
             prompt=prompt,
             n=1,
-            size='1024x1024',
-            model='dall-e-3'
+            size='1024x1024'
         )
         image_url = response['data'][0]['url']
         return render_template('index.html', image_url=image_url)
     return render_template('index.html', image_url=None)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
