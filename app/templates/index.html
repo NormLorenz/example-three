@@ -10,7 +10,9 @@
 </head>
 
 <body>
-    <div class="loading-overlay" id="loading-overlay">Loading...</div>
+    <div class="loading-overlay" id="loading-overlay">
+        <img class="loading-image" src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading...">
+    </div>
 
     <h1>DALL-E-3 Image Generator</h1>
 
@@ -24,7 +26,7 @@
 
     <h2>Generated Image:</h2>
 
-    <img src="{{ image_url }}" height="512px" width="512px" alt="Generated Image">
+    <img class="response-image" src="{{ image_url }}" height="512px" width="512px" alt="Generated Image">
 
     <br>
 
