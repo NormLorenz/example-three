@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,37 @@
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+
 <body>
     <h1>DALL-E-3 Image Generator</h1>
+
     <form method="post">
         <label for="prompt">Enter a prompt:</label>
         <input type="text" id="prompt" name="prompt" required>
         <button type="submit">Generate Image</button>
     </form>
+
     {% if image_url %}
-        <h2>Generated Image:</h2>
-        <img src="{{ image_url }}" height="512px" width="512px" alt="Generated Image">
-        <br>
-        <a href="{{ image_url }}" download="generated_image.png">
-            <button type="button">Download Image</button>
-        </a>
+    <h2>Generated Image:</h2>
+
+    <img src="{{ image_url }}" height="512px" width="512px" alt="Generated Image">
+    <br>
+    <a href="{{ image_url }}" download="generated_image.png">
+        <button type="button">Download Image</button>
+    </a>
+    <br>
+
+    <div class="revised-prompt">
+        {{revised_prompt}}
+    </div>
+
     {% endif %}
+
+    <footer>
+        <p>Powered by <a href="">OpenAI's DALL-E-3</a></p>
+        <p>Created by <a href=" ">Norm Lorenz</a></p>
+    </footer>
+
 </body>
+
 </html>

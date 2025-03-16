@@ -9,21 +9,25 @@ body {
     height: 100vh;
     margin: 0;
 }
+
 h1 {
     color: #ff4500;
 }
+
 form {
     margin: 20px auto;
     padding: 20px;
     border: 2px solid #ff4500;
     border-radius: 10px;
     background-color: #1e1e1e;
-    max-width: 400px;
+    max-width: 600px;
     width: 100%;
 }
+
 label {
     font-size: 1.2em;
 }
+
 input[type="text"] {
     width: 95%;
     padding: 10px;
@@ -33,6 +37,7 @@ input[type="text"] {
     background-color: #333;
     color: #fff;
 }
+
 button {
     padding: 10px 20px;
     font-size: 1em;
@@ -42,12 +47,24 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
 button:hover {
     background-color: #ff6347;
 }
+
 img {
     margin-top: 20px;
     max-width: 100%;
     border: 2px solid #ff4500;
     border-radius: 10px;
+}
+
+.revised-prompt {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ff4500;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    max-width: 600px;
+    width: 100%;
 }

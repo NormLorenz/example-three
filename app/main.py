@@ -15,13 +15,15 @@ openai.api_key = app.config['OPENAI_API_KEY']
 def index():
     if request.method == 'POST':
         prompt = request.form['prompt']
-        response = openai.Image.create(
+        response = openai.images.generate(
             prompt=prompt,
-            n=1,
-            size='1024x1024'
+            model='dall-e-3'
+            # n=1,
+            # size='1024x1024'
         )
-        image_url = response['data'][0]['url']
-        return render_template('index.html', image_url=image_url)
+        image_url = response.data[0].url
+        revised_prompt = response.data[0].revised_prompt
+        return render_template('index.html', image_url=image_url, revised_prompt=revised_prompt)
     return render_template('index.html', image_url=None)
 
 
