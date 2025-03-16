@@ -17,9 +17,9 @@ def index():
         prompt = request.form['prompt']
         response = openai.images.generate(
             prompt=prompt,
-            model='dall-e-3'
-            # n=1,
-            # size='1024x1024'
+            model='dall-e-3',
+            n=1,
+            size='1024x1024'
         )
         image_url = response.data[0].url
         revised_prompt = response.data[0].revised_prompt
