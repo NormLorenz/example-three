@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DALL-E-3 Image Generator</title>
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
     <div class="loading-overlay" id="loading-overlay">
-        <img class="loading-image" src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading...">
+        <img class="loading-image" src="{{ url_for('static', filename='loading.gif') }}" alt="Loading...">
     </div>
 
     <h1>DALL-E-3 Image Generator</h1>
@@ -30,7 +30,7 @@
 
     <br>
 
-    <a href="{{ image_url }}" download="generated_image.png">
+    <a href="{{ image_url }}" download="dalle3-image.png">
         <button type="button">Download Image</button>
     </a>
 
