@@ -68,9 +68,10 @@ button:hover {
     border-radius: 10px;
 }
 
+
 .loading-image {
-    height: 180px;
-    width: 180px;
+    width: 100px;
+    height: 100px;
 }
 
 .revised-prompt {

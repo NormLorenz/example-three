@@ -39,3 +39,6 @@ dmypy.json
 
 # Pyre
 .pyre/
+
+# config.py
+app/config.py
